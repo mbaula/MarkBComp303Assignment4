@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 80px; }
+        h1 { color: #0066cc; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <span th:text="${username}"></span>!</h1>
+    <p>Your Account ID: <strong th:text="${accountId}"></strong></p>
+    <p th:text="${message}"></p>
+
+    <a href="/login">Proceed to Login</a>
+</body>
+</html>

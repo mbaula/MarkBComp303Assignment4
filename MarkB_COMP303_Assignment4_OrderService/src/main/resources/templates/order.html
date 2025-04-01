@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Place Order</title>
+</head>
+<body>
+    <h2>Place a Stock Order</h2>
+
+    <form th:action="@{/order}" method="post" th:object="${order}">
+        <label>Account ID:</label>
+        <input type="text" th:field="*{accountId}" placeholder="ABC123" required /><br/>
+
+        <label>Stock Symbol:</label>
+        <input type="text" th:field="*{stockSymbol}" placeholder="AAPL" required /><br/>
+
+        <label>Quantity:</label>
+        <input type="number" th:field="*{quantity}" min="1" required /><br/>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <p th:if="${success}" th:text="${success}" style="color: green;"></p>
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+</body>
+</html>
